@@ -624,7 +624,7 @@ class BluetoothPage(Page):
     def OnLoadCb(self):
         self._Offline = False
         if self._Screen._TitleBar._InAirPlaneMode == False:
-            out = commands.getstatusoutput("hcitool dev | grep hci0 |cut -f3") ## bluetooth maybe dead after airplane mode
+            out = subprocess.getstatusoutput("hcitool dev | grep hci0 |cut -f3") ## bluetooth maybe dead after airplane mode
             if len(out[1]) < 17:
                 self._Offline = True
                 print("Bluetooth OnLoadCb ,can not find hci0 alive,try to reboot")

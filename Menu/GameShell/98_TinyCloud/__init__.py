@@ -117,7 +117,7 @@ class TinyCloudPage(Page):
         else:
             self._IP = "xxx.xxx.xxx.xxx"
         
-        hostname = commands.getstatusoutput("hostname")[1]
+        hostname = subprocess.getstatusoutput("hostname")[1]
         if hostname == "":
             hostname = "clockworkpi"
                     
